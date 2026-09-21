@@ -1,0 +1,271 @@
+:root {
+    --bg-color: #fdfbf7;
+    --text-color: #4b5563;
+    --accent-color: #f472b6;
+    --glass-bg: rgba(255, 255, 255, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.8);
+    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    background-image: 
+        radial-gradient(at 0% 0%, hsla(328, 100%, 90%, 0.7) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, hsla(271, 100%, 92%, 0.7) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, hsla(199, 100%, 90%, 0.7) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, hsla(43, 100%, 90%, 0.7) 0px, transparent 50%);
+    background-size: 200% 200%;
+    animation: auraEffect 15s ease infinite;
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+header {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+nav {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    padding: 0.5rem 2rem;
+    display: flex;
+    gap: 2rem;
+    transition: all 0.3s ease;
+}
+
+nav:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    padding: 0.5rem;
+}
+
+nav a:hover, nav a.active {
+    color: var(--accent-color);
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(45deg, #f472b6, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #374151;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #6b7280;
+}
+
+.project-card, .experience {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 2rem;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover, .experience:hover {
+    transform: translateY(-5px);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.content-section {
+    margin-bottom: 4rem;
+}
+
+.hero-text {
+    font-size: 1.2rem;
+    max-width: 800px;
+    line-height: 1.8;
+}
+
+.hero-text strong {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.experience-card, .contact-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover, .contact-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.experience-card h3 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.company {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.company span {
+    color: #9ca3af;
+    font-weight: 400;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .skills-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.skill-category h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #374151;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.tag {
+    background: #fce7f3;
+    color: #be185d;
+    border: 1px solid #fbcfe8;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    background: #fbcfe8;
+    color: #9d174d;
+}
+
+.contact-card p {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-card a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-card a:hover {
+    color: #f472b6;
+    text-decoration: underline;
+}
+
+.experience-card ul {
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+    color: #6b7280;
+}
+
+.experience-card li {
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+}
+
+.project-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--glass-border);
+}
+
+.project-link {
+    display: inline-block;
+    margin: 1rem 0;
+    padding: 0.6rem 1.5rem;
+    background: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(244, 114, 182, 0.3);
+}
+
+.project-link:hover {
+    background: #ec4899;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(244, 114, 182, 0.4);
+}
+
+.eisner-image {
+    display: block;
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 800px;
+    transform: scale(1.05);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.eisner-image:hover {
+    transform: scale(1.08);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes auraEffect {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
